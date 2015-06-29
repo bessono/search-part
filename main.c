@@ -1,6 +1,6 @@
 //========================================================
 //
-//	FileSearcher is an utility for search 
+//	SearchPart is an utility for search 
 //	signatures in files.
 //
 //	Author: BessonovAlexanderEvgenivich
@@ -117,3 +117,4 @@ void read_file(char *file_name, char *srcs){
 	}
 	
 }
+

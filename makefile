@@ -1,2 +1,2 @@
 all: 
-	gcc main.c -o search-signature
+	gcc main.c -o search-part

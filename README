@@ -1,0 +1,24 @@
+SearchPart REAME file
+==================================================
+
+SearchPart is an utility for search custom signatures in file system.
+
+INSTALL
+=================
+For install, you need make some next steps:
+
+1. Unzip archive in some TMP folder
+2. Go in this folder with "cd" 
+3. Compile source code with "make -f makefile"
+4. copy search-part in /usr/bin
+
+USE
+=================
+If you do all 4 points from Install, you can just insert into terminal "search-part".
+Then utitly will ask you where you want search? And What you want find? Then search_signature well
+ search in all file tree with subdirectory, will open all files and will search in files what you 
+ point to find. Then will be wonder What a file type looking. Like you see, its very simple.
+
+LICENS
+================
+GPL
