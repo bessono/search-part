@@ -20,6 +20,8 @@
 void read_dir(char *dir_name);
 void read_file(char *filename, char *srcs);
 
+static char log_file[255] = "---";
+static int make_log = 0;
 static int dir_not_opened = 0;
 static int search_counter = 0;
 static int dir_counter = 0;
@@ -29,7 +31,15 @@ static char search_path[255] = "---";
 static char search_signature[1024] = "---";
 static char file_types[20] = "---";
 
-main(){
+main(int argc, char *argv[]){
+	if((argc >= 2) && (strstr(argv[1],"-l"))){
+		if(argv[2] != NULL){
+			printf("Start with \"make log\" in  %s file \n",argv[2]);
+			make_log = 1;
+			strcpy(log_file,argv[2]);
+		}
+	
+	}
 	printf("Where will searching? ");
 	scanf("%s",search_path);
 	printf("\nWhat do you want to find? ");
@@ -98,16 +108,25 @@ void read_dir(char *dirname){
 void read_file(char *file_name, char *srcs){
 	
 	FILE *filep;
+	FILE *log;
+	int i = 0;
+	char fline[1124] = "-";
 	char cur_line[1024] = "--";
 	if(!strlen(file_name) < 1){
 		filep = fopen(file_name,"r");
 		if(filep != NULL){
 			all_file_counter++;
 			while((fgets(cur_line,1024,filep)) != NULL){
-				
+				i++;
 				if(strstr(cur_line,srcs)){
 					search_counter++;
-					printf("WAS FOUND IN %s in line %s",file_name,cur_line);
+					printf("WAS FOUND IN %d::%s in line %s \n",i,file_name,cur_line);
+					if(make_log == 1){
+						log = fopen(log_file,"a+");
+						sprintf(fline,"\n ======== \n WAS FOUND IN %d::%s in line %s \n",i,file_name,cur_line);
+						fputs(fline,log);
+						fclose(log);
+					}			
 				}		
 				
 				
