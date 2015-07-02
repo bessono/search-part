@@ -20,7 +20,8 @@
 void read_dir(char *dir_name);
 void read_file(char *filename, char *srcs);
 
-static search_counter = 0;
+static int dir_not_opened = 0;
+static int search_counter = 0;
 static int dir_counter = 0;
 static int all_file_counter = 0;
 static int errors_file_counter = 0;
@@ -50,6 +51,7 @@ main(){
 	printf("\n ================================== \n Was found %d \n", search_counter);
 	printf(" Looked in %d files \n", all_file_counter );
 	printf(" Total directory %d \n",dir_counter);
+	printf(" Not opened directory %d \n",dir_not_opened);
 	printf(" Not opened files %d \n", errors_file_counter);
 	printf(" ================================= \n");
 return 0;
@@ -86,6 +88,7 @@ void read_dir(char *dirname){
 		}
 	closedir(m_dir);
 	} else {
+		dir_not_opened++;
 		printf("CannotOpenDir %s \n",dirname);
 	}
 	
