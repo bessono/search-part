@@ -40,6 +40,14 @@ main(int argc, char *argv[]){
 		}
 	
 	}
+	if((argc > 1) && (strstr(argv[1],"-h"))){
+		printf("\n=======================================\n \n");
+		printf(" Help for search-part utility \n");
+		printf(" search-part -l [log-file-name] : will make and write in logfile all search output \n");
+		printf(" Yout can use \"search-part\" without -l, just enter \"search-part\" in console and folow questions for make searching in files. \n");
+		printf("\n=======================================\n ");
+	exit(0);
+	}
 	printf("Where will searching? ");
 	scanf("%s",search_path);
 	printf("\nWhat do you want to find? ");

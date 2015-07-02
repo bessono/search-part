@@ -12,13 +12,18 @@ For install, you need make some next steps:
 3. Compile source code with "make -f makefile"
 4. copy search-part in /usr/bin
 
-USE
+HELP FOR USE
 =================
-If you do all 4 points from Install, you can just insert into terminal "search-part".
-Then utitly will ask you where you want search? And What you want find? Then search_signature well
- search in all file tree with subdirectory, will open all files and will search in files what you 
- point to find. Then will be wonder What a file type looking. Like you see, its very simple.
+search-part -l [log-file-name] : will make and write in logfile all search output 
+Yout can use "search-part" without -l, just enter "search-part" 
+in console and folow questions for make searching in files. 
+
+
 
 LICENS
 ================
 GPL
+
+ 
+
+ 
