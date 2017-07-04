@@ -3,7 +3,7 @@
 //	SearchPart is an utility for search 
 //	signatures in files.
 //
-//	Author: BessonovAlexanderEvgenivich
+//	Author: Bessonov Alexander Evgenivich
 //	Author e-mail: bessonomap@yandex.ru
 //	Author web site: http://bessonov.in.ua
 //	License: GPL 
